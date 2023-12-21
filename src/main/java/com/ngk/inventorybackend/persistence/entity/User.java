@@ -6,13 +6,10 @@ import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Column;
-import jakarta.persistence.OneToMany;
-
-import java.util.List;
 
 @Entity
-@Table(name = "Unidad")
-public class Unit {
+@Table(name = "Usuario")
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Integer id;
@@ -20,6 +17,15 @@ public class Unit {
     @Column(name = "nombre")
     public String name;
 
-    @OneToMany(mappedBy = "unit")
-    public List<Inventory> inventory;
+    @Column(name = "apellido_materno")
+    public String firstLastName;
+
+    @Column(name = "apellido_paterno")
+    public String secondLastName;
+
+    @Column(name = "correo")
+    public String email;
+
+    @Column(name = "contrasena")
+    public String password;
 }

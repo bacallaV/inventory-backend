@@ -1,6 +1,13 @@
 package com.ngk.inventorybackend.persistence.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Column;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 import java.util.Date;
 
@@ -12,26 +19,26 @@ public class Medicament {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Integer id;
 
-    @Column(name= "clave")
+    @Column(name = "clave")
     public Integer code;
 
-    @Column(name ="descripcion")
-    public Integer description;
+    @Column(name = "descripcion")
+    public String description;
 
-    @Column(name ="lote")
+    @Column(name = "lote")
     public Integer lot;
 
-    @Column(name ="caducidad")
+    @Column(name = "caducidad")
     public Date expirationDate;
 
-    @Column(name ="cantidad")
+    @Column(name = "cantidad")
     public Integer quantity;
 
-    @Column(name ="status")
+    @Column(name = "status")
     public String status;
 
     @ManyToOne
     @JoinColumn(name = "idInventario", insertable = false, updatable = false)
-    public Inventory idInventory;
+    public Inventory inventory;
 
 }
