@@ -27,6 +27,9 @@ public class Inventory {
     @Column(name = "fecha")
     public Date date;
 
+    @Column(name = "status")
+    public String status;
+
     @OneToMany(mappedBy = "inventory")
     public List<Medicament> medicament;
 }

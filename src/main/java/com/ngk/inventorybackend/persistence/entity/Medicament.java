@@ -34,9 +34,6 @@ public class Medicament {
     @Column(name = "cantidad")
     public Integer quantity;
 
-    @Column(name = "status")
-    public String status;
-
     @ManyToOne
     @JoinColumn(name = "idInventario", insertable = false, updatable = false)
     public Inventory inventory;
