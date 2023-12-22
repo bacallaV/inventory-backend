@@ -11,7 +11,7 @@ services:
     volumes:
       - ./db.sql:/docker-entrypoint-initdb.d/initdb.sql
     healthcheck:
-        test: [ "CMD-SHELL", 'mysql --database=logistica --password=$$MYSQL_ROOT_PASSWORD --execute="SELECT count(*) AS totalTables FROM information_schema.tables WHERE TABLE_SCHEMA=logistica;"' ]
+        test: [ "CMD-SHELL", 'mysql --database=logistica --password=$$MYSQL_ROOT_PASSWORD --execute="SELECT count(*) AS totalTables FROM information_schema.tables WHERE TABLE_SCHEMA=logistica_bajio;"' ]
         interval: 30s
         timeout: 20s
         retries: 10
