@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.ngk.inventorybackend.persistence.crud.InventoryCrudRepository;
 import com.ngk.inventorybackend.persistence.entity.Inventory;
+import com.ngk.inventorybackend.utilities.Status;
 
 import java.util.List;
 import java.util.Optional;
@@ -23,11 +24,11 @@ public class InventoryRepository {
     }
 
     public List<Inventory> findOpenInventories() {
-        return this.inventoryCrudRepository.findByStatus("ABIERTO");
+        return this.inventoryCrudRepository.findByStatus(Status.ABIERTO);
     }
 
     public List<Inventory> findClosedInventories() {
-        return this.inventoryCrudRepository.findByStatus("CERRADO");
+        return this.inventoryCrudRepository.findByStatus(Status.CERRADO);
     }
 
     public Inventory create(Inventory inventory) {

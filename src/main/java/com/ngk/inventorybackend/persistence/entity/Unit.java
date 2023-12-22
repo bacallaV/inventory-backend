@@ -11,10 +11,11 @@ import jakarta.persistence.OneToMany;
 import java.util.List;
 
 @Entity
-@Table(name = "Unidad")
+@Table(name = "unidad")
 public class Unit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_unidad")
     public Integer id;
 
     @Column(name = "nombre")

@@ -12,11 +12,12 @@ import jakarta.persistence.ManyToOne;
 import java.util.Date;
 
 @Entity
-@Table(name = "Insumo")
+@Table(name = "insumo")
 public class Medicament {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_insumo")
     public Integer id;
 
     @Column(name = "clave")
@@ -35,7 +36,7 @@ public class Medicament {
     public Integer quantity;
 
     @ManyToOne
-    @JoinColumn(name = "idInventario", insertable = false, updatable = false)
+    @JoinColumn(name = "id_inventario", insertable = false, updatable = false)
     public Inventory inventory;
 
 }
